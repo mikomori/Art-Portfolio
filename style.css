@@ -1,0 +1,389 @@
+h2 {
+  letter-spacing: 7px;
+  font-size: 30px;
+  padding: 30px 0 10px;
+}
+
+body,
+h1,
+h2,
+p {
+  margin: 0;
+  color: #735d73;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.wrapper {
+  padding: 0 10vw;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  text-align: center;
+}
+
+@-webkit-keyframes slide {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 90px;
+  }
+}
+
+@keyframes slide {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 90px;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+@-webkit-keyframes rise {
+  0% {
+    -webkit-transform: translateY(200px);
+            transform: translateY(200px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rise {
+  0% {
+    -webkit-transform: translateY(200px);
+            transform: translateY(200px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.wrapper .rise {
+  -webkit-animation: rise 0.7s forwards;
+          animation: rise 0.7s forwards;
+}
+
+.wrapper .nav {
+  padding-top: 30px;
+  text-align: right;
+  -webkit-animation: fadeIn 3s;
+          animation: fadeIn 3s;
+}
+
+.wrapper .nav div {
+  display: inline-block;
+  font-size: 22px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  padding: 0 10px;
+  line-height: 15px;
+}
+
+.wrapper .nav div:hover {
+  background: #fdfda1;
+  cursor: pointer;
+}
+
+.wrapper .nav #work,
+.wrapper .nav #contact {
+  margin-left: 50px;
+}
+
+.wrapper section {
+  background: white;
+  opacity: 0;
+}
+
+.wrapper .main {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: left;
+}
+
+.wrapper .main #intro {
+  margin-top: 170px;
+  margin-left: 100px;
+}
+
+.wrapper .main #intro h1 {
+  font-size: 90px;
+  letter-spacing: 10px;
+  font-weight: 70;
+  height: 90px;
+  overflow: hidden;
+  -webkit-animation: slide 0.7s ease-out;
+          animation: slide 0.7s ease-out;
+}
+
+.wrapper .main #intro h1 span {
+  margin: 5px;
+  line-height: 30px;
+  display: inline-block;
+  padding: 0 30px 10px 5px;
+}
+
+.wrapper .main #intro p {
+  font-size: 28px;
+  margin: 20px 0 0 20px;
+  letter-spacing: 7px;
+  -webkit-animation: fadeIn 1s;
+          animation: fadeIn 1s;
+}
+
+.wrapper .main #intro .gap {
+  height: 30px;
+}
+
+.wrapper .main #introImage {
+  min-width: 450px;
+  background-image: url("./images/illustration/homecoming.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+  -webkit-animation: fadeIn 1.5s;
+          animation: fadeIn 1.5s;
+  background-position-x: center;
+}
+
+.wrapper .description {
+  margin: 20px 10px;
+  font-size: 18px;
+}
+
+.wrapper .work {
+  padding: 50px 0 100px;
+}
+
+.wrapper .work .image {
+  width: 30%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0 2% 2% 0;
+  display: inline-block;
+  position: relative;
+  font-size: 0;
+}
+
+.wrapper .work .image img {
+  width: 100%;
+}
+
+.wrapper .work .image::after {
+  content: "";
+  font-size: 0;
+  width: 30%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.wrapper .work .image:hover::after {
+  cursor: pointer;
+  background: rgba(250, 253, 105, 0.612);
+  width: 100%;
+}
+
+.wrapper #contactInfo {
+  padding-bottom: 300px;
+  opacity: 1;
+}
+
+.wrapper #contactInfo div {
+  display: inline-block;
+}
+
+.wrapper #contactInfo p {
+  font-size: 26px;
+  margin-top: 30px;
+  vertical-align: middle;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.wrapper #contactInfo #gmail {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-size: contain;
+  background-image: url("./images/gmail.png");
+  margin-right: 10px;
+  opacity: 0.7;
+}
+
+.wrapper #contactInfo #behance {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-size: contain;
+  background-image: url("./images/behance.png");
+  margin-right: 10px;
+  opacity: 0.7;
+}
+
+.wrapper #contactInfo #instagram {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-size: contain;
+  background-image: url("./images/instagram.png");
+  margin-right: 10px;
+  opacity: 0.7;
+}
+
+.lightBox {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.lightBox .display {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.lightBox .display #left,
+.lightBox .display #right {
+  cursor: pointer;
+  margin: 50px;
+  font-size: 50px;
+  color: rgba(255, 255, 255, 0.714);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.lightBox .display .item img {
+  height: 95vh;
+}
+
+.lightBox #cross {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 20px 50px;
+  font-size: 50px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.714);
+}
+
+.showImage {
+  opacity: 1;
+  z-index: 10;
+}
+
+@media only screen and (max-width: 760px) {
+  .wrapper {
+    padding: 0;
+    text-align: center;
+  }
+  .wrapper .nav {
+    text-align: center;
+  }
+  .wrapper .main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    height: auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .wrapper .main #intro {
+    margin-left: 0;
+    margin-bottom: 100px;
+    margin-top: 0;
+  }
+  .wrapper .main #intro h1 {
+    font-size: 70px;
+  }
+  .wrapper .main #introImage {
+    height: 500px;
+    min-width: 100%;
+    margin-top: 40px;
+  }
+  .wrapper .work .image {
+    width: 80%;
+  }
+  .wrapper #contactInfo p {
+    font-size: 16px;
+  }
+  .lightBox .display {
+    width: 100%;
+  }
+  .lightBox .display #left,
+  .lightBox .display #right {
+    margin: 0;
+  }
+  .lightBox .item {
+    text-align: center;
+    width: 90%;
+    margin-top: 150px;
+    overflow: auto;
+  }
+}

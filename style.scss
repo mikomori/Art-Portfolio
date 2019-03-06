@@ -1,0 +1,302 @@
+$primaryColor: rgb(115, 93, 115);
+$secondaryColor: rgb(255, 72, 112);
+$backgroundColor: rgb(253, 253, 161);
+
+%subtitle {
+    letter-spacing: 7px;
+    font-size: 30px;
+    padding: 30px 0 10px;
+}
+
+@mixin icon($url, $size) {
+    display: inline-block;
+    width: #{$size}px;
+    height: #{$size}px;
+    background-size: contain;
+    background-image: url($url);
+    margin-right: 10px;
+    opacity: 0.7;
+}
+
+body,
+h1,
+h2,
+p {
+    margin: 0;
+    color: $primaryColor;
+    font-family: "Josefin Sans", sans-serif;
+}
+h2 {
+    @extend %subtitle;
+}
+.wrapper {
+    padding: 0 10vw;
+    transition: 0.5s;
+    text-align: center;
+
+    @keyframes slide {
+        0% {
+            height: 0;
+        }
+
+        100% {
+            height: 90px;
+        }
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 0.8;
+        }
+    }
+
+    @keyframes rise {
+        0% {
+            transform: translateY(200px);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .rise {
+        animation: rise 0.7s forwards;
+    }
+
+    .nav {
+        padding-top: 30px;
+        text-align: right;
+        animation: fadeIn 3s;
+        div {
+            display: inline-block;
+            font-size: 22px;
+            transition: 0.5s;
+            padding: 0 10px;
+            line-height: 15px;
+            &:hover {
+                background: $backgroundColor;
+                cursor: pointer;
+            }
+        }
+        #work,
+        #contact {
+            margin-left: 50px;
+        }
+    }
+    section {
+        background: white;
+        opacity: 0;
+    }
+
+    .main {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        text-align: left;
+        #intro {
+            margin-top: 170px;
+            margin-left: 100px;
+            h1 {
+                font-size: 90px;
+                letter-spacing: 10px;
+                font-weight: 70;
+                height: 90px;
+                overflow: hidden;
+                animation: slide 0.7s ease-out;
+                span {
+                    margin: 5px;
+                    line-height: 30px;
+                    display: inline-block;
+                    padding: 0 30px 10px 5px;
+                }
+            }
+
+            p {
+                font-size: 28px;
+                margin: 20px 0 0 20px;
+                letter-spacing: 7px;
+                animation: fadeIn 1s;
+            }
+            .gap {
+                height: 30px;
+            }
+        }
+        #introImage {
+            min-width: 450px;
+            background-image: url("./images/illustration/homecoming.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.8;
+            animation: fadeIn 1.5s;
+            background-position-x: center;
+        }
+    }
+    .description {
+        margin: 20px 10px;
+        font-size: 18px;
+    }
+    .work {
+        padding: 50px 0 100px;
+        .image {
+            width: 30%;
+            box-sizing: border-box;
+            margin: 0 2% 2% 0;
+            display: inline-block;
+            position: relative;
+            font-size: 0;
+
+            img {
+                width: 100%;
+            }
+            &::after {
+                content: "";
+                font-size: 0;
+                width: 30%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0.5;
+                transition: 0.5s;
+            }
+            &:hover::after {
+                cursor: pointer;
+                background: rgba(250, 253, 105, 0.612);
+                width: 100%;
+            }
+        }
+    }
+
+    #contactInfo {
+        padding-bottom: 300px;
+        opacity: 1;
+        div {
+            display: inline-block;
+        }
+        p {
+            font-size: 26px;
+            margin-top: 30px;
+            vertical-align: middle;
+            display: flex;
+            align-items: flex-end;
+        }
+        #gmail {
+            @include icon("./images/gmail.png", 30);
+        }
+        #behance {
+            @include icon("./images/behance.png", 30);
+        }
+        #instagram {
+            @include icon("./images/instagram.png", 30);
+        }
+    }
+}
+
+.lightBox {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .display {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        #left,
+        #right {
+            cursor: pointer;
+            margin: 50px;
+            font-size: 50px;
+            color: rgba(255, 255, 255, 0.714);
+            user-select: none;
+        }
+        .item {
+            img {
+                height: 95vh;
+            }
+        }
+    }
+    #cross {
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin: 20px 50px;
+        font-size: 50px;
+        cursor: pointer;
+        color: rgba(255, 255, 255, 0.714);
+    }
+}
+
+.showImage {
+    opacity: 1;
+    z-index: 10;
+}
+
+@media  only screen and (max-width: 760px) {
+    .wrapper {
+        padding:0;
+        text-align: center;
+        .nav{
+            text-align: center;
+        }
+        .main {
+            flex-direction: column-reverse;
+            height: auto;
+            align-items: center;
+            
+            #intro {
+                margin-left: 0;
+                margin-bottom: 100px;
+                margin-top: 0;
+                h1{
+                    font-size: 70px;
+                }
+            }
+            #introImage {
+                height: 500px;
+                min-width: 100%;
+                margin-top: 40px;
+            }
+        }
+        .work {
+            .image {
+                width: 80%;
+            }
+        }
+        #contactInfo {
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+    .lightBox {
+        .display {
+            width:100%;
+            #left,
+            #right {
+                margin:0;
+            }
+        }
+        .item {
+            text-align: center;
+            width:90%;
+            margin-top: 150px;
+            overflow: auto;
+        }
+    }
+}
