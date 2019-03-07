@@ -78,7 +78,6 @@ h2 {
     }
     section {
         background: white;
-        opacity: 0;
     }
 
     .main {
@@ -238,9 +237,6 @@ h2 {
         text-align: center;
         .nav{
             text-align: center;
-        }
-        section{
-            opacity:1;
         }
         .main {
             flex-direction: column-reverse;
