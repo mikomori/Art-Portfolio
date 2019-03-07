@@ -56,21 +56,6 @@ h2 {
         }
     }
 
-    @keyframes rise {
-        0% {
-            transform: translateY(200px);
-            opacity: 0;
-        }
-        100% {
-            transform: translateY(0);
-            opacity: 1;
-        }
-    }
-
-    .rise {
-        animation: rise 0.7s forwards;
-    }
-
     .nav {
         padding-top: 30px;
         text-align: right;
@@ -253,6 +238,9 @@ h2 {
         text-align: center;
         .nav{
             text-align: center;
+        }
+        section{
+            opacity:1;
         }
         .main {
             flex-direction: column-reverse;

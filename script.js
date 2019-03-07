@@ -1,8 +1,6 @@
 const work = document.querySelector("#work");
 const contact = document.querySelector("#contact");
 const illustration = document.querySelector("#illustration");
-const graphicDesign = document.querySelector("#graphicDesign");
-const webDesign = document.querySelector("#webDesign");
 const contactInfo = document.querySelector("#contactInfo");
 const works = document.querySelectorAll('.work')
 const lightBox = document.querySelector('.lightBox')
@@ -73,20 +71,6 @@ work.onclick = () => setScroll("work");
 contact.onclick = () => setScroll("contact");
 cross.onclick = () => lightBox.classList.remove('showImage')
 
-window.onscroll = () => {
-    const height = window.innerHeight
-    const scrollTop = document.documentElement.scrollTop
-    
-    if(scrollTop >= illustration.offsetTop - height/2){
-        illustration.classList.add('rise')
-    }
-    if(scrollTop >= graphicDesign.offsetTop - height/2){
-        graphicDesign.classList.add('rise')
-    }
-    if(scrollTop >= webDesign.offsetTop - height/2){
-        webDesign.classList.add('rise')
-    }
-}
 
 
 
